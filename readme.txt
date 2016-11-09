@@ -28,9 +28,9 @@ Created by [Flightless](http://flightless.us)
 == Installation ==
 
 1. Download and unzip the plugin
-1. Upload the `WP-Router` folder to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. You should see the sample page at http://example.org/wp_router/sample/. Apart from that, there is no public UI for this plugin. You will not see any changes unless the plugin's API is called by another active plugin.
+2. Upload the `WP-Router` folder to the `/wp-content/plugins/` directory
+3. Activate the plugin through the 'Plugins' menu in WordPress
+4. You should see the sample page at http://example.org/wp_router/sample/. Apart from that, there is no public UI for this plugin. You will not see any changes unless the plugin's API is called by another active plugin.
 
 == Usage ==
 
