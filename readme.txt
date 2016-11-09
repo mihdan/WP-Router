@@ -104,7 +104,8 @@ Created by [Flightless](http://flightless.us)
 			and exiting directly from your callback function).
 
 Example:
-`$router->add_route('wp-router-sample', array(
+```php
+$router->add_route('wp-router-sample', array(
 	'path' => '^wp_router/(.*?)$',
 	'query_vars' => array(
 		'sample_argument' => 1,
@@ -114,7 +115,8 @@ Example:
 	'access_callback' => TRUE,
 	'title' => 'WP Router Sample Page',
 	'template' => array('sample-page.php', dirname(__FILE__).DIRECTORY_SEPARATOR.'sample-page.php')
-));`
+));
+```
 
 In this example, the path `http://example.com/wp_router/my_sample_path/` will call
 the function `sample_callback` in the calling class. The value of the `sample_argument`
