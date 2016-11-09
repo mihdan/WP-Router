@@ -1,4 +1,4 @@
-=== WP Router ===
+# WP Router
 Contributors: jbrinley
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A69NZPKWGB6H2
 Tags: URL mapping, callback functions
@@ -8,7 +8,7 @@ Stable tag: trunk
 
 Provides a simple API for mapping requests to callback functions.
 
-== Description ==
+## Description
 
 WordPress's rewrite rules and query variables provide a powerful system
 for mapping URL strings to collections of posts. Every request is parsed
@@ -25,16 +25,16 @@ URL to your designated callback function and display the return value in the pag
 
 Created by [Flightless](http://flightless.us)
 
-== Installation ==
+## Installation
 
 1. Download and unzip the plugin
 2. Upload the `WP-Router` folder to the `/wp-content/plugins/` directory
 3. Activate the plugin through the 'Plugins' menu in WordPress
 4. You should see the sample page at http://example.org/wp_router/sample/. Apart from that, there is no public UI for this plugin. You will not see any changes unless the plugin's API is called by another active plugin.
 
-== Usage ==
+## Usage
 
-= Creating Routes =
+### Creating Routes
 
 * Your plugin should hook into the `wp_router_generate_routes` action.
 	The callback should take one argument, a `WP_Router` object.
@@ -103,7 +103,8 @@ Created by [Flightless](http://flightless.us)
 			be printed before calling `exit()` (you can also accomplish this by printing your output
 			and exiting directly from your callback function).
 
-Example:
+### Example:
+
 ```php
 $router->add_route('wp-router-sample', array(
 	'path' => '^wp_router/(.*?)$',
@@ -125,11 +126,11 @@ argument to the callback function. If the file `sample-page.php` is found in the
 it will be used as the template, otherwise `sample-page.php` in your plugin directory will
 be used (if that's not found either, fall back to `route-wp-router-sample.php`, etc.).
 
-= Editing Routes =
+### Editing Routes
 
 * You can hook into the `wp_router_alter_routes` action to modify routes created by other plugins. The callback should take one argument, a `WP_Router` object.
 
-= Public API Functions =
+### Public API Functions
 
 Creating or changing routes should always occur in the context of the `wp_router_generate_routes` or `wp_router_alter_routes` actions, using the `WP_Router` object supplied to your callback function.
 
@@ -142,44 +143,44 @@ Creating or changing routes should always occur in the context of the `wp_router
 * `WP_Route::get( string $property )` - get the value of the specified property for
 	the `WP_Route` instance
 
-== Changelog ==
+## Changelog
 
-= 0.5 =
+### 0.5
 
 * Filter get_permalink on router pages to point to the requested URI
 * Filter post meta for the placeholder page when on a router page to provide a title to WP SEO
 * Added `wp_router_placeholder_postmeta` filter for adding additional meta to the placeholder page
 
-= 0.4 =
+### 0.4
 
 * Prevent redirect from route pages with the "page" or "paged" query arg
 
-= 0.3.3 =
+### 0.3.3
 
 * Prevent redirect from all route pages when %category% is in the permastruct
 * Redirect placeholder page to the blog front page
 * Fix usage of translation functions
 
-= 0.3.2 =
+### 0.3.2
 
 * Make $arguments param optional for WP_Router::get_url() and WP_Router::url()
 
-= 0.3.1 =
+### 0.3.1
 
 * Added WP_Router::get_url()
 * Added WP_Route::url()
 
-= 0.3 =
+### 0.3
 
 * Added `FALSE` option to template parameter to indicate immediate `exit()`
 * Added option to specify different callback functions depending on the HTTP request method
 * Verified compatibility with WordPress 3.0
 * Added WP_Router::get_url() function
 
-= 0.2 =
+### 0.2
 
 * Added the `template` argument
 
-= 0.1 =
+### 0.1
 
 * Initial version
